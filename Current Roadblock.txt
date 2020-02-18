@@ -1,0 +1,11 @@
+This repo is just a test repo for me to practice with getting a Java Rest API working. 
+
+The issue currently is getting it to run properly. I managed to create a .war file for the application.
+Using Tomcat server I upload the .war file onto the tomcat server I have running on my machine (I followed this guide 
+https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04)
+
+But once I get the "app" running on the tomcat server, the endpoints aren't opearting as they should. For example
+/hello should just display a message. But that is not working. Plus there seems to sometimes be an issue with creating
+a .war file as the latest tomcat server I download keeps failing builds using Java 12? So I had to downgrade to Java 11.
+
+
