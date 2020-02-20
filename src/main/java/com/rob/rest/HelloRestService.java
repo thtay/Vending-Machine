@@ -4,6 +4,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
+@Path("/service")
 public class HelloRestService {
     @GET //This annotation indicates GET Requests
     @Path("/hello")
