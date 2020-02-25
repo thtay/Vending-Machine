@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'war'
+
+group = 'com.rob'
+version = '1.0'
+
+description = "Sample REST Project"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+     mavenCentral()
+}
+
+dependencies {
+    compile 'org.jboss.resteasy:resteasy-jaxrs:3.1.4.Final'
+    compile 'org.jboss.resteasy:resteasy-client:3.1.4.Final'
+    testCompile 'junit:junit:4.8.2'
+}
