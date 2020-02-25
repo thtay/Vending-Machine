@@ -9,6 +9,6 @@ public class HelloRestService {
     @GET //This annotation indicates GET Requests
     @Path("/hello")
     public Response hello() {
-        return Response.status(200).entity("hello").build();
+        return Response.status(200).entity("hello and something").build();
     }
 }
