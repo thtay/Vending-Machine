@@ -1,0 +1,29 @@
+@startuml
+
+class Item {
+int: id
+string: name
+float: price
+..
+}
+
+class Inventory{
+item: Items
+..
++ restockInventory()
++ removeItem()
++ addItem()
+}
+
+class VendingMachine{
+inventory: Inventory
+..
++ issueRefund()
++ validInputCheck()
++ underPaid()
+}
+
+Inventory <-- Item
+VendingMachine <-- Inventory
+
+@enduml
