@@ -1,14 +1,15 @@
-package com.rob.rest;
+package com.rob.rest.contract;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
+@SuppressWarnings("checkstyle:Indentation")
 @Path("/service")
-public class HelloRestService {
+public interface HelloRestInterface {
     @GET //This annotation indicates GET Requests
     @Path("/hello")
-    public Response hello() {
-        return Response.status(200).entity("hello and something").build();
-    }
+    Response hello();
 }
+

@@ -1,0 +1,26 @@
+@startuml
+[*] --> URLInput
+state URLInput{
+URLInput: Takes input from URL.
+}
+
+URLInput --> PrePurchaseCheck: If valid input
+URLInput --> InvalidInputError: If input is Invalid
+
+state PrePurchaseCheck{
+PrePurchaseCheck: Check if the purchase has:
+PrePurchaseCheck: EnoughMoney + InStock
+}
+
+PrePurchaseCheck --> OutOfStockError: If item is out of stock
+PrePurchaseCheck --> NotEnoughMoneyError: If not enough money is provided.
+
+PrePurchaseCheck --> PurchaseCheck: If item in stock and paid enough money.
+
+PurchaseCheck --> IssueRefund: If a refund is needed.
+IssueRefund --> IssuePurchasedItem: Return the refund amount.
+
+PurchaseCheck --> IssuePurchasedItem: If no refund needed.
+
+
+@enduml
