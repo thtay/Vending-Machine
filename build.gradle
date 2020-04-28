@@ -1,3 +1,7 @@
+plugins {
+    id "io.freefair.lombok" version "5.0.0"
+}
+
 apply plugin: 'java'
 apply plugin: 'war'
 
@@ -14,7 +18,8 @@ repositories {
 }
 
 dependencies {
-    compile 'org.jboss.resteasy:resteasy-jaxrs:3.1.4.Final'
-    compile 'org.jboss.resteasy:resteasy-client:3.1.4.Final'
-    testCompile 'junit:junit:4.8.2'
+    implementation 'org.jboss.resteasy:resteasy-jaxrs:3.1.4.Final'
+    implementation 'org.jboss.resteasy:resteasy-client:3.1.4.Final'
+    implementation 'org.jboss.resteasy:resteasy-jackson-provider:3.1.4.Final'
+    testImplementation 'junit:junit:4.8.2'
 }

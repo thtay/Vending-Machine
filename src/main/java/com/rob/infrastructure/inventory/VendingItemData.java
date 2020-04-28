@@ -1,27 +1,22 @@
 package com.rob.infrastructure.inventory;
 
-import com.rob.domain.VendingItemBuilder;
+import com.rob.domain.VendingItem;
+import com.rob.infrastructure.contract.VendingItemRepo;
 import com.rob.infrastructure.implementation.VendingItemRepoImp;
-
-import java.text.ParseException;
+import lombok.Getter;
 
 public class VendingItemData {
 
-    private VendingItemRepoImp itemRepository;
+    @Getter
+    private static VendingItemRepo itemRepository = new VendingItemRepoImp();
 
-    public void populateRepositories() {
-        try {
-
-            // Create the vending machine items
-            itemRepository.saveItem(new VendingItemBuilder()
-                    .setTitle("Coke")
-                    .setId("1")
-                    .setPrice((float) 1.0)
-                    .setDescription("Coke")
-                    .createItem());
-        } catch (NullPointerException e) {
-            System.out.println("Exception thrown: " + e);
-        }
+    static {
+        // Create the vending machine items
+        itemRepository.saveItem(VendingItem.builder()
+                .title("Coke")
+                .id("1")
+                .price((float) 1.0)
+                .description("Coke")
+                .build());
     }
-
 }

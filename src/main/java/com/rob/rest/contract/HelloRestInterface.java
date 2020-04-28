@@ -11,5 +11,6 @@ public interface HelloRestInterface {
     @GET //This annotation indicates GET Requests
     @Path("/hello")
     Response hello();
+
 }
 
